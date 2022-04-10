@@ -1,36 +1,41 @@
+/*
+Name: Aston
+Date: 2/24/2022
+Project: Processing Task
+*/
+
+
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+  int xSize = 600;
+  int ySize = 600;
+  
   public void settings() {
-	// put your size call here
-    size(400, 400);
+    size(xSize, ySize);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+  //stuff is relative to (400, 400)
+  float xSizeRatio = (float) xSize / (float) 400.00;
+  float ySizeRatio = (float) ySize / (float) 400.00;
+  
   public void setup() {
     background(210, 255, 173);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-	// sample code, delete this stuff
+    //System.out.println(xSize + " " + ySize + " " + xSizeRatio + " " + ySizeRatio);
+    
     stroke(128);
-    line(150, 25, 270, 350);  
+    line(150 * xSizeRatio, 25 * ySizeRatio, 270 * xSizeRatio, 350 * ySizeRatio);  
 
     stroke(255);
-    line(50, 125, 70, 50);  
+    line(50 * xSizeRatio, 125 * ySizeRatio, 70 * xSizeRatio, 50 * ySizeRatio);  
+
+    stroke(0);
+    fill(0);
+    ellipse(200 * xSizeRatio, 200 * ySizeRatio, 200 * xSizeRatio, 200 * ySizeRatio);
   }
   
-  // define other methods down here.
 }
